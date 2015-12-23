@@ -3,7 +3,7 @@ var http = require('http');
 var request = require('request');
 
 var next_gps_time = new Date();
-var gps_interval = 6000;
+var gps_interval = 60000;
 
 // 
 // Rely on OS to daemonize GPSD (default on rPi)
