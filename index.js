@@ -6,7 +6,7 @@ var next_gps_time = new Date();
 var gps_interval = 60000;
 
 
-Rely on OS to daemonize GPSD (default on rPi)
+// Rely on OS to daemonize GPSD (default on rPi)
 
 var daemon = new gpsd.Daemon({
     program: 'gpsd',

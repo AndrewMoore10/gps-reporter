@@ -27,3 +27,5 @@ Thumbs.db
 
 secrets.js
 config/secrets.js
+
+*.rdb
