@@ -5,20 +5,20 @@ var request = require('request');
 var next_gps_time = new Date();
 var gps_interval = 60000;
 
-// 
-// Rely on OS to daemonize GPSD (default on rPi)
-// 
-// var daemon = new gpsd.Daemon({
-//     program: 'gpsd',
-//     device: '/dev/ttyUSB0',
-//     port: 2947,
-//     pid: '/tmp/gpsd.pid',
-//     logger: {
-//         info: function() {},
-//         warn: console.warn,
-//         error: console.error
-//     }
-// });
+
+Rely on OS to daemonize GPSD (default on rPi)
+
+var daemon = new gpsd.Daemon({
+    program: 'gpsd',
+    device: '/dev/ttyUSB0',
+    port: 2947,
+    pid: '/tmp/gpsd.pid',
+    logger: {
+        info: function() {},
+        warn: console.warn,
+        error: console.error
+    }
+});
 
 var listener = new gpsd.Listener({
     port: 2947,
@@ -73,16 +73,6 @@ function post_gps(data){
       console.log("Response: " + JSON.stringify(response) );
     }
   );
-
-  // Set up the request
-  //var post_req = http.request(post_options, function(res) {
-  //    res.setEncoding('utf8');
-  //    res.on('data', function (chunk) {
-  //        console.log('Response: ' + chunk);
-  //    });
-  //});
-
-  // post the data
-  //post_req.write(JSON.stringify(data) );
-  //post_req.end();
 }
+
+
